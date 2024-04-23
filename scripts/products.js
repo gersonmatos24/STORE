@@ -19,3 +19,21 @@ class product {
     const product6 = new product(1, "Ipad Pro 12.9", 900000, "https://i.postimg.cc/kX8PKZpq/ipad2.jpg", 10, 50, "Apple");
 
     const products = [product1, product2, product3, product4, product5, product6];
+
+    function createCard(product) {
+        return`<a class="product-card" href="./details.html"> 
+        <img class="product-img" src="${product.img}" alt="${product.nombre}">
+        <div class="product-info">
+            <span class="product-title">iPad Pro 12.9</span>
+            <span class="product-description">Silver</span>
+            <div class="product-price-block">
+              <span class="product-price">900000</span>
+              <span class="product-discount">50% Off</span>
+            </div>
+            <div class="product-tax-policy">
+              Incluye impuesto País y percepción AFIP
+            </div>
+          </div>
+        </a>` ;
+        
+    }

@@ -20,11 +20,12 @@ class product {
 
     const products = [product1, product2, product3, product4, product5, product6];
 
+    const selectorContainer = document.getElementById("products");
     function createCard(product) {
         return`<a class="product-card" href="./details.html"> 
         <img class="product-img" src="${product.img}" alt="${product.nombre}">
         <div class="product-info">
-            <span class="product-title">iPad Pro 12.9</span>
+            <span class="product-title">${product.nombre}</span>
             <span class="product-description">Silver</span>
             <div class="product-price-block">
               <span class="product-price">900000</span>
@@ -35,5 +36,9 @@ class product {
             </div>
           </div>
         </a>` ;
-        
     }
+    let productsTemplate = "";
+    for (let product of products) {
+        productsTemplate = productsTemplate + createCard(product);
+    }
+    selectorContainer.innerHTML = productsTemplate;
